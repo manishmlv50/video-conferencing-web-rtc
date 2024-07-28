@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adios Rooms</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/310c091879.js" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <script>
+        const ROOM_ID = "<%= roomId %>";
+    </script>
+</head>
+<body>
+
+    <div class="main">
+        <div class="main__left">
+            <div class="main__videos">
+                <div id="video-grid">
+
+                </div>
+            </div>
+            <div class="main__controls">
+                <div class="main__controls__block">
+                    <div class="main__controls__button main__mute_button" onclick="toggleMute()">
+                        <i class="fas fa-microphone"></i>
+                        <span>Mute</span>
+                    </div>
+                    <div class="main__controls__button main__video_button" onclick="toggleVideo()">
+                        <i class="fas fa-video"></i>
+                        <span>Stop Video</span>
+                    </div>
+                </div>
+
+                <div class="main__controls__block">
+                    <div class="main__controls__button">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Security</span>
+                    </div>
+                    <div class="main__controls__button">
+                        <i class="fas fa-user-friends"></i>
+                        <span>Participants</span>
+                    </div>
+                    <div class="main__controls__button">
+                        <i class="fas fa-comment-alt"></i>
+                        <span>Chat</span>
+                    </div>
+                </div>
+
+                <div class="main__controls__block">
+                    <div class="main__controls__button">
+                        <i class="fas fa-sign-out"></i>
+                        <span class="leave_meeting">Leave Meeting</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main__right">
+            <div class="main__header">
+                <h6>Chat</h6>
+            </div>
+            <div class="main__chat_window">
+                <ul id="message-list" class="messages">
+
+                </ul>
+            </div>
+            <div class="main__message_container">
+                <input id="chat_message" class="focus-visible" data-focus-visible-added type="text" placeholder="Type message here...">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

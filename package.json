@@ -1,0 +1,19 @@
+{
+  "name": "zoom-clone",
+  "version": "1.0.0",
+  "description": "This is a zoom clone project to understand peer to peer webrtc connection",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Manish",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "peer": "^1.0.2",
+    "socket.io": "^4.7.5",
+    "uuid": "^10.0.0"
+  }
+}
